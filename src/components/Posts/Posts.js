@@ -20,10 +20,8 @@ export const Posts = () => {
     <div className='App'>
       <ul>
         {data.posts.map((post) => (
-          <li>
-            <Link key={post.id} to={`post/${post.id}`}>
-              {post.title}
-            </Link>
+          <li key={post.id}>
+            <Link to={`post/${post.id}`}>{post.title}</Link>
           </li>
         ))}
       </ul>

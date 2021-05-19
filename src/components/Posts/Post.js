@@ -9,22 +9,6 @@ const POST_QUERY = gql`
     }
   }
 `
-const ADD_POST = gql`
-  mutation addPost($title: String!, $body: String!) {
-    createPost(data: { title: $title, body: $body }) {
-      title
-      body
-    }
-  }
-`
-
-const PUBLISH_POST = gql`
-  mutation publishPost($id: ID!) {
-    publishPost(where: { id: $id }, to: PUBLISHED) {
-      id
-    }
-  }
-`
 
 export const Post = ({ match }) => {
   const { loading, data } = useQuery(POST_QUERY, {
