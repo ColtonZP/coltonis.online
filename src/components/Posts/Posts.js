@@ -7,7 +7,6 @@ const POSTS_QUERY = gql`
       id
       title
       body
-      createdAt
     }
   }
 `
@@ -19,11 +18,15 @@ export const Posts = () => {
     'loading...'
   ) : (
     <div className='App'>
-      {data.posts.map((post) => (
-        <Link key={post.id} to={`post/${post.id}`}>
-          <h1>{post.title}</h1>
-        </Link>
-      ))}
+      <ul>
+        {data.posts.map((post) => (
+          <li>
+            <Link key={post.id} to={`post/${post.id}`}>
+              {post.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

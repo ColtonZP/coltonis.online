@@ -14,6 +14,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <Link to='/'>
+          <h1>HOME</h1>
+        </Link>
         <Switch>
           <Route exact path='/' component={Posts} />
           <Route path='/post/:id' component={Post} />
