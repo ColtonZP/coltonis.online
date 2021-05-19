@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import { gql, useQuery } from '@apollo/client'
 
 const POSTS_QUERY = gql`
@@ -14,13 +14,15 @@ const POSTS_QUERY = gql`
 
 export const Posts = () => {
   const { loading, data } = useQuery(POSTS_QUERY)
-  
+
   return loading ? (
     'loading...'
   ) : (
     <div className='App'>
       {data.posts.map((post) => (
-        <h1>{post.title}</h1>
+        <Link key={post.id} to={`post/${post.id}`}>
+          <h1>{post.title}</h1>
+        </Link>
       ))}
     </div>
   )
