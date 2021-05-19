@@ -1,13 +1,8 @@
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  gql,
-} from '@apollo/client'
+import { gql, useQuery } from '@apollo/client'
 import './App.css'
 
-const query = gql`
-  {
+const POSTS_QUERY = gql`
+  query allPosts {
     posts {
       id
       title
@@ -17,31 +12,17 @@ const query = gql`
   }
 `
 
-const client = new ApolloClient({
-  uri: 'https://api-us-west-2.graphcms.com/v2/ckovqxkol5h2u01xgauiqg9xo/master',
-  cache: new InMemoryCache(),
-})
-
-// client.query({ query: query }).then(res => console.log(res))
-
 function App() {
-  return (
-    <ApolloProvider client={client}>
-      <div className='App'>
-        <header className='App-header'>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'>
-            Learn React
-          </a>
-        </header>
-      </div>
-    </ApolloProvider>
+  const { loading, data } = useQuery(POSTS_QUERY)
+
+  return loading ? (
+    'Loading...'
+  ) : (
+    <div className='App'>
+      {data.posts.map((post) => (
+        <h1>{post.title}</h1>
+      ))}
+    </div>
   )
 }
 
