@@ -1,28 +1,25 @@
-import { gql, useQuery } from '@apollo/client'
-import './App.css'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
-const POSTS_QUERY = gql`
-  query allPosts {
-    posts {
-      id
-      title
-      body
-      createdAt
-    }
-  }
-`
+import './App.css'
+import { Post } from './components/Posts/Post'
+import { Posts } from './components/Posts/Posts'
+
+const client = new ApolloClient({
+  uri: 'https://api-us-west-2.graphcms.com/v2/ckovqxkol5h2u01xgauiqg9xo/master',
+  cache: new InMemoryCache(),
+})
 
 function App() {
-  const { loading, data } = useQuery(POSTS_QUERY)
-
-  return loading ? (
-    'Loading...'
-  ) : (
-    <div className='App'>
-      {data.posts.map((post) => (
-        <h1>{post.title}</h1>
-      ))}
-    </div>
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Posts} />
+          <Route path='/post/:id' component={Post} />
+        </Switch>
+      </Router>
+    </ApolloProvider>
   )
 }
 
