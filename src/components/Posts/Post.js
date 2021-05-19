@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client'
+import { UpdatePost } from './UpdatePost'
 
 const POST_QUERY = gql`
   query posts($id: ID!) {
@@ -19,7 +20,13 @@ export const Post = ({ match }) => {
     'Loading...'
   ) : (
     <div>
-      <h1>{data.post.title}</h1>
+      <section>
+        <h1>{data.post.title}</h1>
+      </section>
+      <section>
+        <h1>Edit Post</h1>
+        <UpdatePost id={data.post.id} />
+      </section>
     </div>
   )
 }

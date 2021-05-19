@@ -1,9 +1,9 @@
+import { gql, useMutation } from '@apollo/client'
 import { PostForm } from './PostForm'
-import { useMutation, gql } from '@apollo/client'
 
-const ADD_POST = gql`
-  mutation addPost($title: String!, $body: String!) {
-    createPost(data: { title: $title, body: $body }) {
+const UPDATE_POST = gql`
+  mutation updatePost($id: ID!, $title: String!, $body: String!) {
+    updatePost(where: { id: $id }, data: { title: $title, body: $body }) {
       title
       body
       id
@@ -21,14 +21,13 @@ const PUBLISH_POST = gql`
   }
 `
 
-export const NewPost = () => {
-  const [addPost] = useMutation(ADD_POST)
+export const UpdatePost = ({ id }) => {
+  const [updatePost] = useMutation(UPDATE_POST)
   const [publishPost] = useMutation(PUBLISH_POST)
 
   function onSubmit(title, body) {
-    addPost({ variables: { title, body } })
-      .then((res) => {
-        const { id } = res.data.createPost
+    updatePost({ variables: { id, title, body } })
+      .then(() => {
         publishPost({ variables: { id } }).catch((err) => console.log(err))
       })
       .catch((err) => console.log(err))
@@ -36,7 +35,6 @@ export const NewPost = () => {
 
   return (
     <div>
-      <h1>New Post</h1>
       <PostForm onSubmit={onSubmit} />
     </div>
   )
