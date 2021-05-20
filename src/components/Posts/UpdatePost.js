@@ -21,7 +21,7 @@ const PUBLISH_POST = gql`
   }
 `
 
-export const UpdatePost = ({ id }) => {
+export const UpdatePost = ({ id, defaultValue }) => {
   const [updatePost] = useMutation(UPDATE_POST)
   const [publishPost] = useMutation(PUBLISH_POST)
 
@@ -35,7 +35,10 @@ export const UpdatePost = ({ id }) => {
 
   return (
     <div>
-      <PostForm onSubmit={onSubmit} />
+      <PostForm
+        onSubmit={onSubmit}
+        defaultValue={defaultValue}
+      />
     </div>
   )
 }

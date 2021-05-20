@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-export const PostForm = ({ onSubmit }) => {
-  const [title, updateTitle] = useState('')
-  const [body, updateBody] = useState('')
+export const PostForm = ({ onSubmit, defaultValue }) => {
+  const [title, updateTitle] = useState(defaultValue ? defaultValue.title : '')
+  const [body, updateBody] = useState(defaultValue ? defaultValue.body : '')
 
   return (
     <form

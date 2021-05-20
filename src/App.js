@@ -1,14 +1,37 @@
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  makeVar,
+} from '@apollo/client'
 
 import './App.css'
 import { Post } from './components/Posts/Post'
 import { Posts } from './components/Posts/Posts'
 import { NewPost } from './components/Posts/NewPost'
 
+const initialSettings = {
+  isEditMode: false,
+}
+
+export const settings = makeVar(initialSettings)
+
 const client = new ApolloClient({
   uri: 'https://api-us-west-2.graphcms.com/v2/ckovqxkol5h2u01xgauiqg9xo/master',
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          settings: {
+            read() {
+              return settings()
+            },
+          },
+        },
+      },
+    },
+  }),
 })
 
 function App() {
