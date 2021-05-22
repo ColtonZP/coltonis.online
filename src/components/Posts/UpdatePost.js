@@ -1,4 +1,5 @@
 import { gql, useMutation } from '@apollo/client'
+import { settings } from '../../App'
 import { PostForm } from './PostForm'
 
 const UPDATE_POST = gql`
@@ -28,6 +29,7 @@ export const UpdatePost = ({ id, defaultValue }) => {
   function onSubmit(title, body) {
     updatePost({ variables: { id, title, body } })
       .then(() => {
+        settings({ isEditMode: false })
         publishPost({ variables: { id } }).catch((err) => console.log(err))
       })
       .catch((err) => console.log(err))
@@ -35,10 +37,7 @@ export const UpdatePost = ({ id, defaultValue }) => {
 
   return (
     <div>
-      <PostForm
-        onSubmit={onSubmit}
-        defaultValue={defaultValue}
-      />
+      <PostForm onSubmit={onSubmit} defaultValue={defaultValue} />
     </div>
   )
 }

@@ -5,6 +5,7 @@ import {
   ApolloProvider,
   makeVar,
 } from '@apollo/client'
+import { offsetLimitPagination } from '@apollo/client/utilities'
 
 import './App.css'
 import { Post } from './components/Posts/Post'
@@ -26,6 +27,12 @@ const client = new ApolloClient({
           settings: {
             read() {
               return settings()
+            },
+          },
+          posts: {
+            keyArgs: false,
+            merge(existing = [], incoming) {
+              return [...existing, ...incoming]
             },
           },
         },
