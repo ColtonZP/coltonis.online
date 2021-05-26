@@ -1,14 +1,7 @@
+import { useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
-import { gql, useQuery } from '@apollo/client'
 
-const POSTS_QUERY = gql`
-  query allPosts($skip: Int, $first: Int) {
-    posts(orderBy: createdAt_DESC, skip: $skip, first: $first) {
-      id
-      title
-    }
-  }
-`
+import { POSTS_QUERY } from '../../GraphQL/Queries'
 
 export const Posts = () => {
   const { loading, data, fetchMore } = useQuery(POSTS_QUERY, {

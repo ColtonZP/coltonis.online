@@ -1,25 +1,9 @@
+import { useMutation } from '@apollo/client'
+
+import { PUBLISH_POST } from '../../GraphQL/Mutations'
+import { ADD_POST } from '../../GraphQL/Mutations'
+
 import { PostForm } from './PostForm'
-import { useMutation, gql } from '@apollo/client'
-
-const ADD_POST = gql`
-  mutation addPost($title: String!, $body: String!) {
-    createPost(data: { title: $title, body: $body }) {
-      title
-      body
-      id
-    }
-  }
-`
-
-const PUBLISH_POST = gql`
-  mutation publishPost($id: ID!) {
-    publishPost(where: { id: $id }, to: PUBLISHED) {
-      id
-      title
-      body
-    }
-  }
-`
 
 export const NewPost = () => {
   const [addPost] = useMutation(ADD_POST)

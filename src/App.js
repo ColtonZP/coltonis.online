@@ -36,6 +36,9 @@ const client = new ApolloClient({
           },
         },
       },
+      Post: {
+        keyFields: ['title', 'id'],
+      },
     },
   }),
 })
