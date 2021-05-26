@@ -30,7 +30,7 @@ export const Posts = () => {
             onClick={() => {
               fetchMore({
                 variables: {
-                  skip: 10,
+                  skip: data.posts.length,
                   first: 10,
                 },
               })

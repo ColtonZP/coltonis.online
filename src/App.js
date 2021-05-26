@@ -5,7 +5,6 @@ import {
   ApolloProvider,
   makeVar,
 } from '@apollo/client'
-import { offsetLimitPagination } from '@apollo/client/utilities'
 
 import './App.css'
 import { Post } from './components/Posts/Post'
