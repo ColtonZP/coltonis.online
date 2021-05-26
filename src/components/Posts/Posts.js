@@ -11,14 +11,16 @@ export const Posts = () => {
   return loading ? (
     'loading...'
   ) : (
-    <div className='App'>
-      <ol>
-        {data.posts.map((post) => (
-          <li key={post.id}>
-            <Link to={`post/${post.id}`}>{post.title}</Link>
-          </li>
-        ))}
-        <li>
+    <div className='article-grid'>
+      {data.posts.map((post) => (
+        <Link to={`post/${post.id}`}>
+          <article key={post.id}>
+            <small>{post.createdAt}</small>
+            <h2>{post.title}</h2>
+          </article>
+        </Link>
+      ))}
+      {/* <li>
           <button
             onClick={() => {
               fetchMore({
@@ -32,8 +34,7 @@ export const Posts = () => {
             }}>
             Get more
           </button>
-        </li>
-      </ol>
+        </li> */}
     </div>
   )
 }

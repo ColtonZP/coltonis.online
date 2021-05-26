@@ -6,10 +6,8 @@ import {
   makeVar,
 } from '@apollo/client'
 
-import './App.css'
-import { Post } from './components/Posts/Post'
-import { Posts } from './components/Posts/Posts'
-import { NewPost } from './components/Posts/NewPost'
+import { Post } from './Components/Posts/Post'
+import { Posts } from './Components/Posts/Posts'
 
 const initialSettings = {
   isEditMode: false,
@@ -48,12 +46,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Link to='/'>
-          <h1>HOME</h1>
+          <h1>/coltonpemberton.dev</h1>
         </Link>
-        <Link to='/post/new'>New Post</Link>
         <Switch>
           <Route exact path='/' component={Posts} />
-          <Route exact path='/post/new' component={NewPost} />
           <Route path='/post/:id' component={Post} />
         </Switch>
       </Router>

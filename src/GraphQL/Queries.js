@@ -5,6 +5,7 @@ export const POSTS_QUERY = gql`
     posts(orderBy: createdAt_DESC, skip: $skip, first: $first) {
       id
       title
+      createdAt
     }
   }
 `
