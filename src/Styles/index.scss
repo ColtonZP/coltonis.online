@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
   padding: 0;
@@ -35,29 +35,29 @@ h5 {
 
 h1 {
   font-size: 4.209rem;
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 h2 {
   font-size: 3.157rem;
 }
 
-h3 {
-  font-size: 2.369rem;
-}
+// h3 {
+//   font-size: 2.369rem;
+// }
 
-h4 {
-  font-size: 1.777rem;
-}
+// h4 {
+//   font-size: 1.777rem;
+// }
 
-h5 {
-  font-size: 1.333rem;
-}
+// h5 {
+//   font-size: 1.333rem;
+// }
 
-small,
-.text_small {
-  font-size: 0.75rem;
-}
+// small,
+// .text_small {
+//   font-size: 0.75rem;
+// }
 
 a {
   text-decoration: none;
@@ -68,4 +68,11 @@ a {
   }
 }
 
-@import 'App'
+.container {
+  width: 80vw;
+  max-width: 1300;
+  margin: 0 auto;
+}
+
+@import 'App';
+@import 'Article';

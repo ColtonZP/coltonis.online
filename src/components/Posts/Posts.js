@@ -15,7 +15,7 @@ export const Posts = () => {
       {data.posts.map((post) => (
         <Link to={`post/${post.id}`}>
           <article key={post.id}>
-            <small>{post.createdAt}</small>
+            <small>{new Date(post.createdAt).toLocaleDateString('en-US')}</small>
             <h2>{post.title}</h2>
           </article>
         </Link>
