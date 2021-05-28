@@ -1,5 +1,4 @@
 import { useQuery } from '@apollo/client'
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { POSTS_QUERY } from '../../GraphQL/Queries'
@@ -16,10 +15,10 @@ export const Posts = () => {
       {data.posts.map((post) => (
         <Link to={`post/${post.id}`}>
           <article key={post.id}>
+            <h2>{post.title}</h2>
             <small>
               {new Date(post.createdAt).toLocaleDateString('en-US')}
             </small>
-            <h2>{post.title}</h2>
           </article>
         </Link>
       ))}

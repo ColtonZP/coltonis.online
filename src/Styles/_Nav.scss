@@ -1,0 +1,57 @@
+nav {
+  display: flex;
+  flex-direction: row;
+
+  & a,
+  & a h1 {
+    font-size: 1.777rem;
+    font-weight: 700;
+  }
+
+  & a {
+    padding: 1em 0 2em;
+  }
+
+  & .inactive, h1 {
+    &:hover {
+      color: blue;
+    }
+  }
+
+  & .inactive {
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: blue;
+    height: 2px;
+    width: 0%;
+    transition: width ease .3s;
+    }
+  }
+  
+  & .home, & .about {
+    margin-left: 3em;
+    position: relative;
+  }
+
+  & .header {
+    flex: 1;
+  }
+
+  & .active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    height: 2px;
+    width: 100%;
+  }
+}
