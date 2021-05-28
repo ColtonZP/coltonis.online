@@ -9,6 +9,10 @@ article {
     font-size: 1.333rem;
     color: gray;
     font-weight: 500;
+
+    & img {
+      height: 1em;
+    }
   }
 
   & h2 {
