@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom'
 
 export const Nav = () => {
   const location = useLocation()
-  console.log(location.pathname === '/about')
   return (
     <nav>
       <Link to='/' className='header'>
