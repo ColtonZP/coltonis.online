@@ -1,5 +1,5 @@
 article {
-  margin: 4em 0;
+  margin-bottom: 5em;
 
   &:hover {
     color: blue;
@@ -7,6 +7,8 @@ article {
 
   & small {
     font-size: 1.333rem;
+    color: gray;
+    font-weight: 500;
   }
 
   & h2 {
