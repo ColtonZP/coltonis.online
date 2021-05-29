@@ -11,17 +11,22 @@
     display: flex;
     align-self: center;
 
-    & img {
+    & .calendar {
       width: 1em;
       margin-right: .5ch;
     }
   }
 
   & hr {
-    margin: 2em 0 6em;
+    margin: 2em 0 4em;
   }
 
   & p {
     font-size: 1.777rem;
+    margin-bottom: 1em;
+  }
+
+  & img {
+    width: 100%;
   }
 }
