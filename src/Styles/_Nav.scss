@@ -38,17 +38,18 @@ nav {
 
     &:hover::after {
       width: 100%;
+      background: blue;
     }
 
     &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: blue;
-    height: 2px;
-    width: 0%;
-    transition: width ease .3s;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: black;
+      transition: width ease .3s;
     }
   }
   
