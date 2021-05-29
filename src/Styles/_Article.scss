@@ -9,9 +9,12 @@ article {
     font-size: 1.333rem;
     color: gray;
     font-weight: 500;
+    display: flex;
+    align-self: center;
 
     & img {
-      height: 1em;
+      width: 1em;
+      margin-right: .5ch;
     }
   }
 
