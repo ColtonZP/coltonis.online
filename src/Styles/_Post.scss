@@ -1,10 +1,8 @@
-.article-link {
-  margin-bottom: 5em;
-
-  &:hover {
-    color: blue;
+.post {
+  & h1 {
+    font-weight: 700;
   }
-
+  
   & small {
     font-size: 1.333rem;
     color: gray;
@@ -18,8 +16,11 @@
     }
   }
 
-  & h2 {
-    font-size: 2.369rem;
-    font-weight: 600;
+  & hr {
+    margin: 2em 0 6em;
+  }
+
+  & p {
+    font-size: 1.777rem;
   }
 }

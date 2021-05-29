@@ -14,6 +14,7 @@ export const POST_QUERY = gql`
     post(where: { id: $id }) {
       id
       title
+      createdAt
       body
     }
   }

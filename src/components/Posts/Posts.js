@@ -15,7 +15,7 @@ export const Posts = () => {
     <div className='article-grid'>
       {data.posts.map((post) => (
         <Link to={`post/${post.id}`}>
-          <article key={post.id}>
+          <article key={post.id} className='article-link'>
             <h2>{post.title}</h2>
             <small>
               <img src={Calendar} alt='' />
