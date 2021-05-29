@@ -1,5 +1,7 @@
 .post {
 
+  padding-bottom: 4em;
+
   & h1 {
     font-weight: 700;
   }
@@ -19,6 +21,7 @@
 
   & hr {
     margin: 2em 0 4em;
+    border: 1px solid gray;
   }
 
   & p {

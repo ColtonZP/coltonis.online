@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client'
 import Calendar from '../../Images/Calendar.svg'
 import { POST_QUERY } from '../../GraphQL/Queries'
 import ReactMarkdown from 'react-markdown'
+import { Links } from '../Links'
 
 export const Post = ({ match }) => {
   const { loading, data } = useQuery(POST_QUERY, {
@@ -16,11 +17,12 @@ export const Post = ({ match }) => {
       <article className='post'>
         <h1>{data.post.title}</h1>
         <small>
-          <img className="calendar" src={Calendar} alt='' />
+          <img className='calendar' src={Calendar} alt='' />
           {new Date(data.post.createdAt).toLocaleDateString('en-US')}
         </small>
         <hr />
         <ReactMarkdown>{data.post.body}</ReactMarkdown>
+        <Links />
       </article>
     </div>
   )
