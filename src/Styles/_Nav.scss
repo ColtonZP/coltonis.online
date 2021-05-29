@@ -31,7 +31,7 @@ nav {
 
   & .inactive, h1 {
     &:hover {
-      color: blue;
+      color: var(--theme);
     }
   }
 
@@ -39,7 +39,7 @@ nav {
 
     &:hover::after {
       width: 100%;
-      background: blue;
+      background: var(--theme);
     }
 
     &::after {

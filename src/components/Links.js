@@ -11,7 +11,7 @@ export const Links = () => {
         href='https://twitter.com/coltonisonline'
         target='_blank'
         rel='noopener noreferrer'>
-        <img className='social-img' src={Twitter} alt='' /> Follow
+        <img className='social-img' src={Twitter} alt='' />Follow
         @ColtonIsOnline
       </a>
 
@@ -20,7 +20,7 @@ export const Links = () => {
         href='https://https://github.com/ColtonZP'
         target='_blank'
         rel='noopener noreferrer'>
-        <img className='social-img' src={GitHub} alt='' /> ColtonZP
+        <img className='social-img' src={GitHub} alt='' />ColtonZP
       </a>
     </>
   )
