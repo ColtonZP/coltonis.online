@@ -1,7 +1,5 @@
-import React from 'react'
-
-import Twitter from '../Images/Twitter.svg'
-import GitHub from '../Images/GitHub.svg'
+import twitter from '../images/twitter.svg'
+import github from '../images/github.svg'
 
 export const Links = () => {
   return (
@@ -11,16 +9,16 @@ export const Links = () => {
         href='https://twitter.com/coltonisonline'
         target='_blank'
         rel='noopener noreferrer'>
-        <img className='social-img' src={Twitter} alt='' />Follow
+        <img className='social-img' src={twitter} alt='' />Follow
         @ColtonIsOnline
       </a>
 
       <a
         className='social-link github'
-        href='https://https://github.com/ColtonZP'
+        href='https://github.com/ColtonZP'
         target='_blank'
         rel='noopener noreferrer'>
-        <img className='social-img' src={GitHub} alt='' />ColtonZP
+        <img className='social-img' src={github} alt='' />ColtonZP
       </a>
     </>
   )

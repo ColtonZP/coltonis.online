@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
 
-import Calendar from '../../Images/Calendar.svg'
+import calendar from '../../images/calendar.svg'
 import { POSTS_QUERY } from '../../GraphQL/Queries'
 
 export const Posts = () => {
@@ -18,7 +18,7 @@ export const Posts = () => {
           <article key={post.id} className='article-link'>
             <h2>{post.title}</h2>
             <small>
-              <img src={Calendar} alt='' />
+              <img src={calendar} alt='' />
               {new Date(post.createdAt).toLocaleDateString('en-US')}
             </small>
           </article>

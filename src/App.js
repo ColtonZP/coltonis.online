@@ -6,10 +6,10 @@ import {
   makeVar,
 } from '@apollo/client'
 
-import { Post } from './Components/Posts/Post'
-import { Posts } from './Components/Posts/Posts'
-import { About } from './Components/Pages/About'
-import { Nav } from './Components/Nav'
+import { Post } from './components/posts/Post'
+import { Posts } from './components/posts/Posts'
+import { About } from './components/pages/About'
+import { Nav } from './components/Nav'
 
 const initialSettings = {
   theme: 'light',
