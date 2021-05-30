@@ -5,7 +5,7 @@ export const Nav = () => {
   return (
     <nav>
       <Link to='/' className='header'>
-        <h1>Colton Pemberton</h1>
+        <h1>Colton Is Online</h1>
       </Link>
       <Link
         to='/'

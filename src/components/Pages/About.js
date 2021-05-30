@@ -10,7 +10,7 @@ export const About = () => {
         I'm an aspiring front-end developer living just out side of Seattle. I
         use this blog to document the process of the projects I make and the
         skills I learn. Check out my portfolio at{' '}
-        <a className='styled-link' href='coltonpemberton.com'>
+        <a className='styled-link' href='https://coltonpemberton.com'>
           coltonpemberton.com
         </a>
       </p>
