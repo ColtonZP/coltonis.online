@@ -1,17 +1,24 @@
 import { useQuery } from '@apollo/client'
 import ReactMarkdown from 'react-markdown'
+import { RouteComponentProps } from 'react-router-dom'
 
 import calendar from '../../images/calendar.svg'
 import { POST_QUERY } from '../../GraphQL/Queries'
 import { Links } from '../Links'
 
-export const Post = ({ match }) => {
+interface RouteParams {
+  id: string
+}
+
+interface Props extends RouteComponentProps<RouteParams> {}
+
+export const Post = ({ match }: Props ) => {
   const { loading, data } = useQuery(POST_QUERY, {
     variables: { id: match.params.id },
   })
 
   return loading ? (
-    'Loading...'
+    <>Loading...</>
   ) : (
     <div>
       <article className='post'>

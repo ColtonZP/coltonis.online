@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import calendar from '../../images/calendar.svg'
 import { POSTS_QUERY } from '../../GraphQL/Queries'
+import { Post } from '../../types/post'
 
 export const Posts = () => {
   const { loading, data } = useQuery(POSTS_QUERY, {
@@ -10,10 +11,10 @@ export const Posts = () => {
   })
 
   return loading ? (
-    'loading...'
+    <>Loading...</>
   ) : (
     <div className='article-grid'>
-      {data.posts.map((post) => (
+      {data.posts.map((post: Post) => (
         <Link to={`post/${post.id}`}>
           <article key={post.id} className='article-link'>
             <h2>{post.title}</h2>
