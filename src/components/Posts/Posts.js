@@ -5,7 +5,7 @@ import calendar from '../../images/calendar.svg'
 import { POSTS_QUERY } from '../../GraphQL/Queries'
 
 export const Posts = () => {
-  const { loading, data, fetchMore } = useQuery(POSTS_QUERY, {
+  const { loading, data } = useQuery(POSTS_QUERY, {
     variables: { skip: 0, first: 10 },
   })
 
