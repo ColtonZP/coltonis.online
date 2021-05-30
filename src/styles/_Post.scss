@@ -1,0 +1,35 @@
+.post {
+
+  padding-bottom: 4em;
+
+  & h1 {
+    font-weight: 700;
+  }
+  
+  & small {
+    font-size: 1.333rem;
+    color: gray;
+    font-weight: 500;
+    display: flex;
+    align-self: center;
+
+    & .calendar {
+      width: 1em;
+      margin-right: .5ch;
+    }
+  }
+
+  & hr {
+    margin: 2em 0 4em;
+    border: 1px solid var(--gray);
+  }
+
+  & p {
+    font-size: 1.777rem;
+    margin-bottom: 1em;
+  }
+
+  & img {
+    width: 100%;
+  }
+}
