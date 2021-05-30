@@ -12,6 +12,17 @@ export const About = () => {
         <a className='styled-link' href='https://coltonpemberton.com'>
           coltonpemberton.com
         </a>
+        .
+      </p>
+
+      <p>
+        View the source code of this blog on{' '}
+        <a
+          className='styled-link'
+          href='https://github.com/ColtonZP/coltonis.online'>
+          Github
+        </a>
+        .
       </p>
       <p>Follow me!</p>
       <Links />
