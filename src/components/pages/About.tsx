@@ -1,8 +1,12 @@
+import { Helmet } from 'react-helmet'
 import { Links } from '../Links'
 
 export const About = () => {
   return (
     <div className='post'>
+      <Helmet>
+        <meta name='twitter:description' content='Hey, I&#39m Colton' />
+      </Helmet>
       <h1>About</h1>
       <h2>Hey, I'm Colton</h2>
       <p>

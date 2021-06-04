@@ -23,9 +23,7 @@ export const Post = ({ match }: Props) => {
   ) : (
     <div>
       <Helmet>
-        <meta name='twitter:card' content='summary'>
-          {data.post.title}
-        </meta>
+        <meta name='twitter:description' content={data.post.title} />
       </Helmet>
       <article className='post'>
         <h1>{data.post.title}</h1>

@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 import calendar from '../../images/calendar.svg'
 import { POSTS_QUERY } from '../../GraphQL/Queries'
@@ -14,6 +15,9 @@ export const Posts = () => {
     <>Loading...</>
   ) : (
     <div className='article-grid'>
+      <Helmet>
+        <meta name='twitter:description' content='Colton is Online Blog Posts' />
+      </Helmet>
       {data.posts.map((post: Post) => (
         <Link to={`post/${post.id}`}>
           <article key={post.id} className='article-link'>
