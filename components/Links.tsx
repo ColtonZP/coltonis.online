@@ -1,5 +1,5 @@
-import twitter from '../images/twitter.svg'
-import github from '../images/github.svg'
+import twitter from '../public/twitter.svg'
+import github from '../public/github.svg'
 
 export const Links = () => {
   return (

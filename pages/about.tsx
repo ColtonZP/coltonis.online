@@ -1,12 +1,8 @@
-import { Helmet } from 'react-helmet'
-import { Links } from '../Links'
+import { Links } from '../components/Links'
 
-export const About = () => {
+const About = () => {
   return (
-    <div className='post'>
-      <Helmet>
-        <meta name='twitter:description' content='Hey, I&#39m Colton' />
-      </Helmet>
+    <div className='post container'>
       <h1>About</h1>
       <h2>Hey, I'm Colton</h2>
       <p>
@@ -33,3 +29,5 @@ export const About = () => {
     </div>
   )
 }
+
+export default About

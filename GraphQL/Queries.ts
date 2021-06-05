@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
 export const POSTS_QUERY = gql`
-  query allPosts($skip: Int, $first: Int) {
-    posts(orderBy: createdAt_DESC, skip: $skip, first: $first) {
+  query allPosts {
+    posts(orderBy: createdAt_DESC) {
       id
       title
       createdAt

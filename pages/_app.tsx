@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import type { AppProps } from 'next/app'
 import {
   ApolloClient,
   InMemoryCache,
@@ -6,10 +6,8 @@ import {
   makeVar,
 } from '@apollo/client'
 
-import { Post } from './components/posts/Post'
-import { Posts } from './components/posts/Posts'
-import { About } from './components/pages/About'
-import { Nav } from './components/Nav'
+import '../styles/index.scss'
+import { Nav } from '../components/Nav'
 
 const initialSettings = {
   theme: 'light',
@@ -17,7 +15,7 @@ const initialSettings = {
 
 export const settings = makeVar(initialSettings)
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   uri: 'https://api-us-west-2.graphcms.com/v2/ckovqxkol5h2u01xgauiqg9xo/master',
   cache: new InMemoryCache({
     typePolicies: {
@@ -43,21 +41,14 @@ const client = new ApolloClient({
   }),
 })
 
-function App() {
+
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className='container'>
-      <ApolloProvider client={client}>
-        <Router>
-          <Nav />
-          <Switch>
-            <Route exact path='/' component={Posts} />
-            <Route exact path='/about' component={About} />
-            <Route path='/post/:id' component={Post} />
-          </Switch>
-        </Router>
-      </ApolloProvider>
-    </div>
+    <ApolloProvider client={client}>
+      <Nav />
+      <Component {...pageProps} />
+    </ApolloProvider>
   )
 }
 
-export default App
+export default MyApp
