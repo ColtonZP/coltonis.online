@@ -19,8 +19,8 @@ export default function Home({ data }: any) {
         <meta name='twitter:image' content='../public/memoji.png' />
       </Head>
       {data.posts.map((post: any) => (
-        <a href={`post/${post.id}`}>
-          <article key={post.id} className='article-link'>
+        <a href={`post/${post.id}`} key={post.id}>
+          <article className='article-link'>
             <h2>{post.title}</h2>
             <small>
               <img src={calendar} alt='' />
@@ -33,7 +33,7 @@ export default function Home({ data }: any) {
   )
 }
 
-export async function getStaticProps({ query }) {
+export async function getServerSideProps({ query }) {
   const { data } = await client.query({
     query: POSTS_QUERY,
   })

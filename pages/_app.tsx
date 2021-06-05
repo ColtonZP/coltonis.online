@@ -17,28 +17,7 @@ export const settings = makeVar(initialSettings)
 
 export const client = new ApolloClient({
   uri: 'https://api-us-west-2.graphcms.com/v2/ckovqxkol5h2u01xgauiqg9xo/master',
-  cache: new InMemoryCache({
-    typePolicies: {
-      Query: {
-        fields: {
-          settings: {
-            read() {
-              return settings()
-            },
-          },
-          posts: {
-            keyArgs: false,
-            merge(existing = [], incoming) {
-              return [...existing, ...incoming]
-            },
-          },
-        },
-      },
-      Post: {
-        keyFields: ['title', 'id'],
-      },
-    },
-  }),
+  cache: new InMemoryCache(),
 })
 
 
