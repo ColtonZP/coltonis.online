@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/client'
+import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
 
 import calendar from '../../public/calendar.svg'
@@ -11,6 +11,17 @@ export const Post = ({ data }: any) => {
 
   return (
     <div className='container'>
+      <Head>
+        <title>Colton is Online</title>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:title' content='Colton is Online' />
+        <meta
+          name='twitter:description'
+          content='Colton is Online Blog Posts'
+        />
+        <meta name='twitter:image' content='../public/memoji.png' />
+      </Head>
       <article className='post'>
         <h1>{post.title}</h1>
         <small>
