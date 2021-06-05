@@ -9,6 +9,7 @@ export const POSTS_QUERY = gql`
     }
   }
 `
+
 export const POST_QUERY = gql`
   query post($id: ID!) {
     post(where: { id: $id }) {
