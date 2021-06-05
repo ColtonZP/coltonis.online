@@ -18,7 +18,7 @@ export const Post = ({ data }: any) => {
         <meta name='twitter:title' content='Colton is Online' />
         <meta
           name='twitter:description'
-          content='Colton is Online Blog Posts'
+          content={post.title}
         />
         <meta name='twitter:image' content='../public/memoji.png' />
       </Head>
