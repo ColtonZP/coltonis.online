@@ -1,6 +1,6 @@
 import { Links } from '../components/Links'
 
-const About = () => {
+export default function About() {
   return (
     <div className='post container'>
       <h1>About</h1>
@@ -29,5 +29,3 @@ const About = () => {
     </div>
   )
 }
-
-export default About

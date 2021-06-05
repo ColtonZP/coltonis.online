@@ -42,7 +42,7 @@ export const client = new ApolloClient({
 })
 
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <Nav />
@@ -50,5 +50,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </ApolloProvider>
   )
 }
-
-export default MyApp

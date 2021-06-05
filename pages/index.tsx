@@ -5,11 +5,12 @@ import { client } from './_app'
 import calendar from '../public/calendar.svg'
 import memoji from '../public/memoji.png'
 
-function Index({ data }: any) {
+export default function Home({ data }: any) {
   return (
     <div className='article-grid container'>
       <Head>
         <title>Colton is Online</title>
+        <link rel='icon' href='/favicon.ico' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content='Colton is Online' />
         <meta
@@ -39,5 +40,3 @@ export async function getServerSideProps({ query }) {
   })
   return { props: { data } }
 }
-
-export default Index
