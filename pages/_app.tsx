@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import { useEffect, useState } from 'react'
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,37 +10,24 @@ import {
 import '../styles/index.scss'
 import { Nav } from '../components/Nav'
 
-const initialSettings = {
-  theme: 'light',
-}
-
-export const settings = makeVar(initialSettings)
-
 export const client = new ApolloClient({
   uri: 'https://api-us-west-2.graphcms.com/v2/ckovqxkol5h2u01xgauiqg9xo/master',
-  cache: new InMemoryCache({
-    typePolicies: {
-      Query: {
-        fields: {
-          settings: {
-            read() {
-              return settings()
-            },
-          },
-        },
-      },
-      Post: {
-        keyFields: ['title', 'id'],
-      },
-    },
-  }),
+  cache: new InMemoryCache(),
 })
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const [isThemeDark, toggleTheme] = useState(false)
+
+  useEffect(() => {
+    document.body.dataset.theme = isThemeDark ? 'dark' : 'light'
+  }, [isThemeDark])
+
   return (
     <ApolloProvider client={client}>
-      <Nav />
-      <Component {...pageProps} />
+      <div className={`theme-provider ${isThemeDark ? 'dark' : 'light'}`}>
+        <Nav isThemeDark={isThemeDark} toggleTheme={toggleTheme} />
+        <Component {...pageProps} />
+      </div>
     </ApolloProvider>
   )
 }
