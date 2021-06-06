@@ -17,9 +17,23 @@ export const settings = makeVar(initialSettings)
 
 export const client = new ApolloClient({
   uri: 'https://api-us-west-2.graphcms.com/v2/ckovqxkol5h2u01xgauiqg9xo/master',
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          settings: {
+            read() {
+              return settings()
+            },
+          },
+        },
+      },
+      Post: {
+        keyFields: ['title', 'id'],
+      },
+    },
+  }),
 })
-
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
