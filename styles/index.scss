@@ -52,7 +52,7 @@ body[data-theme="light"] {
   --background: #fff;
 
   .toggle-container {
-    background: lightgray;
+    background: var(--gray);
 
     & button {
       left: .2rem;

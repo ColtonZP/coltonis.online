@@ -25,24 +25,28 @@
 
   & .toggle-container {
     margin: auto;
-    width: 3rem;
-    height: 2.4rem;
+    width: 3.5rem;
+    height: 2.8rem;
     border-radius: 25px;
     position: relative;
   }
 
   & button {
     border: none;
-    background-color: var(--color);
+    background-color: white;
     border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
-    font-size: 1.6rem;
-    line-height: 1.4em;
+    height: 2.4rem;
+    width: 2.4rem;
     position: absolute;
     display: inline-block;
     top: .2rem;
     transition: ease-out left .2s;
+
+    & img {
+      height: 90%;
+      width: 90%;
+      margin: 5%;
+    }
   }
 
   & .inactive, h1 {
