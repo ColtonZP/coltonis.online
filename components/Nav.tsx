@@ -1,12 +1,11 @@
-import { gql, useQuery } from '@apollo/client'
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 
-type Props = {
-  isThemeDark: boolean
-  toggleTheme: (boolean) => void
-}
+const ThemeToggle = dynamic(() => import('../components/ThemeToggle'), {
+  ssr: false,
+})
 
-export const Nav = ({ isThemeDark, toggleTheme }: Props) => {
+export const Nav = () => {
   const router = useRouter()
 
   return (
@@ -27,8 +26,9 @@ export const Nav = ({ isThemeDark, toggleTheme }: Props) => {
           }`}>
           About
         </a>
-        <div className={`toggle-container ${isThemeDark ? 'dark-active' : 'light-active'}`}>
-          <button onClick={() => toggleTheme(!isThemeDark)}>🌙</button>
+        <div
+          className='toggle-container'>
+          <ThemeToggle />
         </div>
       </div>
     </nav>

@@ -33,11 +33,31 @@ body,
 body[data-theme="dark"] {
   --color: #fff;
   --background: #000;
+
+  .toggle-container {
+    background: var(--theme);
+
+    & button {
+      left: .8rem;
+    }
+  }
 }
+
+// & .light-active {
+//   background: lightgray;
+// }
 
 body[data-theme="light"] {
   --color: #000;
   --background: #fff;
+
+  .toggle-container {
+    background: lightgray;
+
+    & button {
+      left: .2rem;
+    }
+  }
 }
 
 h1 {

@@ -31,18 +31,6 @@
     position: relative;
   }
 
-  & .dark-active {
-    background: var(--theme);
-
-    & button {
-      left: .8rem;
-    }
-  }
-
-  & .light-active {
-    background: lightgray;
-  }
-
   & button {
     border: none;
     background-color: var(--color);
@@ -50,11 +38,10 @@
     height: 2rem;
     width: 2rem;
     font-size: 1.6rem;
-    line-height: 1.2em;
+    line-height: 1.4em;
     position: absolute;
     display: inline-block;
     top: .2rem;
-    left: .2rem;
     transition: ease-out left .2s;
   }
 
