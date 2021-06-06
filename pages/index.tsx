@@ -16,7 +16,7 @@ export default function Home({ data }: any) {
           name='twitter:description'
           content='Colton is Online Blog Posts'
         />
-        <meta name='twitter:image' content='../public/memoji.png' />
+        <meta name='twitter:image:src' content='../public/memoji.png' />
       </Head>
       {data.posts.map((post: any) => (
         <a href={`post/${post.id}`} key={post.id}>

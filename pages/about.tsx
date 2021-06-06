@@ -13,7 +13,7 @@ export default function About() {
           name='twitter:description'
           content='About Colton is Online'
         />
-        <meta name='twitter:image' content='../public/memoji.png' />
+        <meta name='twitter:image:src' content='../public/memoji.png' />
       </Head>
       <h1>About</h1>
       <h2>Hey, I'm Colton</h2>

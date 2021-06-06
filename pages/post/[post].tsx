@@ -20,7 +20,7 @@ export const Post = ({ data }: any) => {
           name='twitter:description'
           content={post.title}
         />
-        <meta name='twitter:image' content='../public/memoji.png' />
+        <meta name='twitter:image:src' content='../public/memoji.png' />
       </Head>
       <article className='post'>
         <h1>{post.title}</h1>
