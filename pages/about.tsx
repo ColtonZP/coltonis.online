@@ -1,7 +1,6 @@
 import Head from 'next/head'
 
 import { Links } from '../components/Links'
-import memoji from '../public/memoji.png'
 
 export default function About() {
   return (
@@ -12,7 +11,10 @@ export default function About() {
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content='Colton is Online' />
         <meta name='twitter:description' content='About Colton is Online' />
-        <meta name='twitter:image' content={memoji} />
+        <meta
+          name='twitter:image'
+          content='https://coltonis.online/memoji.png'
+        />
       </Head>
       <h1>About</h1>
       <h2>Hey, I'm Colton</h2>

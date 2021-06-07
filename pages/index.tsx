@@ -4,21 +4,22 @@ import { POSTS_QUERY } from '../GraphQL/Queries'
 import { client } from './_app'
 import calendar from '../public/calendar.svg'
 
-import memoji from '../public/memoji.png'
-
 export default function Home({ data }: any) {
   return (
     <div className='article-grid container'>
       <Head>
         <title>Colton is Online</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='./favicon.ico' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content='Colton is Online' />
         <meta
           name='twitter:description'
           content='Colton is Online Blog Posts'
         />
-        <meta name='twitter:image' content={memoji} />
+        <meta
+          name='twitter:image'
+          content='https://coltonis.online/memoji.png'
+        />
       </Head>
       {data.posts.map((post: any) => (
         <a href={`post/${post.id}`} key={post.id}>

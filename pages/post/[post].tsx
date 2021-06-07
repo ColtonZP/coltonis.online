@@ -6,7 +6,6 @@ import { POST_QUERY } from '../../GraphQL/Queries'
 import { Links } from '../../components/Links'
 
 import calendar from '../../public/calendar.svg'
-import memoji from '../../public/memoji.png'
 
 export const Post = ({ data }: any) => {
   const { post } = data
@@ -18,11 +17,11 @@ export const Post = ({ data }: any) => {
         <link rel='icon' href='/favicon.ico' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:title' content='Colton is Online' />
+        <meta name='twitter:description' content={post.title} />
         <meta
-          name='twitter:description'
-          content={post.title}
+          name='twitter:image'
+          content='https://coltonis.online/memoji.png'
         />
-        <meta name='twitter:image' content={memoji} />
       </Head>
       <article className='post'>
         <h1>{post.title}</h1>
