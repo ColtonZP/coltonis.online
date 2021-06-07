@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
 
-import calendar from '../../public/calendar.svg'
 import { client } from '../_app'
 import { POST_QUERY } from '../../GraphQL/Queries'
 import { Links } from '../../components/Links'
+
+import calendar from '../../public/calendar.svg'
+import memoji from '../../public/memoji.png'
 
 export const Post = ({ data }: any) => {
   const { post } = data
@@ -20,7 +22,7 @@ export const Post = ({ data }: any) => {
           name='twitter:description'
           content={post.title}
         />
-        <meta name='twitter:image:src' content='../public/memoji.png' />
+        <meta name='twitter:image' content={memoji} />
       </Head>
       <article className='post'>
         <h1>{post.title}</h1>
